@@ -10,7 +10,6 @@ import (
 	"strconv"
 	"strings"
 	"unsafe"
-
 	"github.com/u-root/u-root/pkg/ipmi"
 	"github.com/u-root/u-root/pkg/smbios"
 )
