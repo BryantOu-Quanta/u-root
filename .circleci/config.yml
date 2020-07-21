@@ -3,7 +3,7 @@ version: 2
 templates:
   golang-template: &golang-template
     docker:
-      - image: uroottest/test-image-amd64:v3.2.12
+      - image: uroottest/test-image-amd64:v3.2.13
     working_directory: /go/src/github.com/u-root/u-root
     environment:
       - CGO_ENABLED: 0
@@ -184,7 +184,7 @@ jobs:
                   go run u-root.go all core
                   go run u-root.go -fourbins minimal
                   go build .
-                  GOOS=plan9 ./u-root plan9 -defaultsh=/bbin/rush -initcmd=/bbin/rush
+                  GOOS=plan9 ./u-root plan9 -defaultsh=/bbin/rush
   test-integration-amd64:
     <<: *integration-template
     docker:
@@ -196,5 +196,5 @@ jobs:
   test-integration-arm64:
     <<: *integration-template
     docker:
-      - image: uroottest/test-image-arm64:v0.0.1
+      - image: uroottest/test-image-arm64:v0.0.2
     working_directory: /home/circleci/go/src/github.com/u-root/u-root
